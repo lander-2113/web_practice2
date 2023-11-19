@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="favicon-32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  
+</head>
+<body>
+    <div class="container">
+      <div class="item item1">
+          <h1 class="item1_x item1_1"> Stay updated!
+          </h1>
+          <p class="item1_x item1_2">Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <p class="list item1_x item1_3">
+            <img src="./assets/images/icon-list.svg" alt="">
+            Product discovery and building what matters
+          </p>
+          <p class="list item1_x item1_4">
+            <img src="./assets/images/icon-list.svg" alt="">
+            Measuring to ensure updates are a success
+
+          </p>
+          <p class="list item1_x item1_5">
+            <img src="./assets/images/icon-list.svg" alt="">
+            And much more!
+          </p>
+
+        <form action="./success.html" method="get" onsubmit="return validateForm();" class="item1_x item1_6">
+          <label for="email_input">Email Address</label>
+          <br>
+          <p id="form_submit_error">VAlid email required</p>
+          <input class="" id="email_input" type="text" placeholder="email@comany.com">
+          <br>
+          <input id="submit-email" type="submit" value="Subscribe to monthly newsletter"/>
+        </form>
+      </div>
+        <img class="item item2" src="assets/images/illustration-sign-up-desktop.svg" alt="">
+    </div>
+
+    <script>
+        function validateForm() {
+            var emailInput = document.getElementById('email_input');
+            var emailValue = emailInput.value.trim();
+            var err_msg = document.getElementById("form_submit_error");
+            err_msg.style.display = "none";
+            emailInput.classList.remove('error');
+            emailInput.style.border = "1px solid black";
+
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailValue === '' || !emailPattern.test(emailValue)) {
+                err_msg.style.display = "block";
+                emailInput.classList.add('error');
+                emailInput.style.border = "1px solid #FC576A";
+                return false;
+            }
+            return true;
+        }
+
+        var err_msg = document.getElementById("form_submit_error");
+        err_msg.addEventListener("click", ()=>{
+          if(err_msg.style.display != 'none') {
+            err_msg.style.display = "none";
+            document.getElementById('email_input').classList.remove('error');
+            document.getElementById('email_input').style.border = "1px solid black";
+            document.getElementById('email_input').focus;
+
+          }
+        });
+    </script>
+</body>
+</html>
