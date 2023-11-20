@@ -27,7 +27,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [VISIT](https://github.com/lander-2113/web_practice2)
-- Live Site URL: [VISIT](https://lander-2113.github.io/web_practice1/)
+- Live Site URL: [VISIT](https://lander-2113.github.io/web_practice2/)
 
 
 
