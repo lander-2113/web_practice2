@@ -12,7 +12,7 @@
         <h1>Thanks for subscribing!</h1>
         <p>
             A confirmation email has been sent to 
-            <span>ash@loremcompany.com.</span> 
+            <span id="email">ash@loremcompany.com.</span> 
             Please open it and click the button 
             inside to confirm your subscription.
         </p>
@@ -27,6 +27,11 @@
                 window.history.back();
             }
         }
+        var urlParams = new URLSearchParams(window.location.search);
+        var email = urlParams.get("email");
+        var email_display = document.getElementById("email");
+        email_display.innerText = email;
+
     </script>
 </body>
 </html>

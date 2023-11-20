@@ -30,14 +30,14 @@
             <img src="./assets/images/icon-list.svg" alt="">
             And much more!
           </p>
-
-        <form action="./success.html" method="get" onsubmit="return validateForm();" class="item1_x item1_6">
+<!-- action="./success.html" method="get" onsubmit="return validateForm();" -->
+        <form class="item1_x item1_6">
           <label for="email_input">Email Address</label>
           <br>
           <p id="form_submit_error">VAlid email required</p>
           <input class="" id="email_input" type="text" placeholder="email@comany.com">
           <br>
-          <input id="submit-email" type="submit" value="Subscribe to monthly newsletter"/>
+          <input id="submit-email" type="button" onclick="validateForm()" value="Subscribe to monthly newsletter"/>
         </form>
       </div>
         <img class="item item2" src="assets/images/illustration-sign-up-desktop.svg" alt="">
@@ -57,9 +57,10 @@
                 err_msg.style.display = "block";
                 emailInput.classList.add('error');
                 emailInput.style.border = "1px solid #FC576A";
-                return false;
+                return;
             }
-            return true;
+            var url = "success.html?email=" + encodeURIComponent(emailValue);
+            window.location.href = url;
         }
 
         var err_msg = document.getElementById("form_submit_error");
